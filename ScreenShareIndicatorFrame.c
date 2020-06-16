@@ -288,7 +288,7 @@ int main( int argc, char* argv[] ) {
 		BOOL (WINAPI *SetProcessDpiAwarenessContextPtr) ( DPI_AWARENESS_CONTEXT ) = (BOOL(WINAPI*)(DPI_AWARENESS_CONTEXT)) GetProcAddress( user32lib, "SetProcessDpiAwarenessContext" );
 
 		if( SetProcessDpiAwarenessContextPtr ) {
-			SetProcessDpiAwarenessContextPtr( DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2  );
+			SetProcessDpiAwarenessContextPtr( ((DPI_AWARENESS_CONTEXT)-4)  );
 		}
 
 		FreeLibrary( user32lib );
